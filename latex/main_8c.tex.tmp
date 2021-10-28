@@ -1,0 +1,79 @@
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a3af573cfba641ce1f00377cd72173bad}\label{main_8c_a3af573cfba641ce1f00377cd72173bad}} 
+\#define {\bfseries S\+T\+A\+T\+E\+\_\+\+L\+I\+ST}(init,  halt, ...)
+\item 
+\mbox{\Hypertarget{main_8c_a195288c29354e7452401a9883b81ef9d}\label{main_8c_a195288c29354e7452401a9883b81ef9d}} 
+\#define {\bfseries S\+T\+A\+T\+E\+\_\+\+D\+EF}(x)
+\item 
+\mbox{\Hypertarget{main_8c_acc83656e2448f092d05accfeaeb11c31}\label{main_8c_acc83656e2448f092d05accfeaeb11c31}} 
+\#define {\bfseries T\+R\+A\+N\+S\+I\+T\+I\+ON}(x,  y)
+\item 
+\#define \hyperlink{main_8c_acf907673409d0085fa138b8a4d979698}{M\+A\+C\+H\+I\+NE}(S\+T\+A\+T\+ES,  S\+T\+A\+R\+T\+\_\+\+S\+T\+A\+TE,  I\+N\+P\+U\+T\+\_\+\+A\+L\+P\+H\+A\+B\+ET,  O\+U\+T\+P\+U\+T\+\_\+\+A\+L\+P\+H\+A\+B\+ET,  T\+R\+A\+N\+S\+I\+T\+I\+O\+N\+\_\+\+F\+U\+N\+C\+T\+I\+ON,  O\+U\+T\+P\+U\+T\+\_\+\+F\+U\+N\+C\+T\+I\+ON)~;
+\item 
+\mbox{\Hypertarget{main_8c_ac2a71c200e52f849670b6c3b3e023032}\label{main_8c_ac2a71c200e52f849670b6c3b3e023032}} 
+\#define {\bfseries I\+N\+I\+T\+\_\+\+M\+A\+C\+H\+I\+NE}(init\+\_\+st)~do\{\} while(0);
+\item 
+\mbox{\Hypertarget{main_8c_a8d8c86e1f58517da67e6fbb2fc890438}\label{main_8c_a8d8c86e1f58517da67e6fbb2fc890438}} 
+\#define {\bfseries M\+E\+A\+L\+Y\+\_\+\+O\+R\+\_\+\+M\+O\+O\+RE}~switch(cur\+State) \{\}; switch(cur\+State)\{\};
+\item 
+\mbox{\Hypertarget{main_8c_ab215419af98b5bcac161760d5851b7e7}\label{main_8c_ab215419af98b5bcac161760d5851b7e7}} 
+\#define {\bfseries H\+A\+L\+T\+\_\+\+M\+A\+C\+H\+I\+NE}()~;
+\item 
+\#define {\bfseries R\+UN}(machine\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+int {\bfseries main} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_acf907673409d0085fa138b8a4d979698}\label{main_8c_acf907673409d0085fa138b8a4d979698}} 
+\index{main.\+c@{main.\+c}!M\+A\+C\+H\+I\+NE@{M\+A\+C\+H\+I\+NE}}
+\index{M\+A\+C\+H\+I\+NE@{M\+A\+C\+H\+I\+NE}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+C\+H\+I\+NE}{MACHINE}}
+{\footnotesize\ttfamily \#define M\+A\+C\+H\+I\+NE(\begin{DoxyParamCaption}\item[{}]{S\+T\+A\+T\+ES,  }\item[{}]{S\+T\+A\+R\+T\+\_\+\+S\+T\+A\+TE,  }\item[{}]{I\+N\+P\+U\+T\+\_\+\+A\+L\+P\+H\+A\+B\+ET,  }\item[{}]{O\+U\+T\+P\+U\+T\+\_\+\+A\+L\+P\+H\+A\+B\+ET,  }\item[{}]{T\+R\+A\+N\+S\+I\+T\+I\+O\+N\+\_\+\+F\+U\+N\+C\+T\+I\+ON,  }\item[{}]{O\+U\+T\+P\+U\+T\+\_\+\+F\+U\+N\+C\+T\+I\+ON }\end{DoxyParamCaption})~;}
+
+This is a 6-\/tuple for both mealy and moore machines.
+
+For mealy\+: (S, S\+\_\+0, sigma, lambda, T, G) consisting of the following\+:
+\begin{DoxyItemize}
+\item a finite set of states S
+\item a start state (also called initial state) S\+\_\+0 which is an element of S
+\item a finite set called the input alphabet sigma
+\item a finite set called the output alphabet Lambda
+\item a transition function T, mapping pairs of a state and an input symbol to the corresponding next state.
+\item an output function G, mapping pairs of a state and an input symbol to the corresponding output symbol.
+\end{DoxyItemize}
+
+For moore\+: (Q, q\+\_\+0, sigma, O, delta, G) consisting of the following\+:
+\begin{DoxyItemize}
+\item A finite set of states Q
+\item A start state (also called initial state) q\+\_\+0 which is an element of Q
+\item A finite set called the input alphabet sigma
+\item A finite set called the output alphabet O
+\item A transition function delta mapping a state and the input alphabet to the next state
+\item An output function G mapping each state to the output alphabet 
+\end{DoxyItemize}\mbox{\Hypertarget{main_8c_aedf77d143950029a8bdbeda043ca1262}\label{main_8c_aedf77d143950029a8bdbeda043ca1262}} 
+\index{main.\+c@{main.\+c}!R\+UN@{R\+UN}}
+\index{R\+UN@{R\+UN}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{R\+UN}{RUN}}
+{\footnotesize\ttfamily \#define R\+UN(\begin{DoxyParamCaption}\item[{}]{machine\+Name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                \(\backslash\)
+        INIT\_MACHINE(START\_STATE)   \(\backslash\)
+        MEALY\_OR\_MOORE                      \(\backslash\)
+        HALT\_MACHINE()                      \(\backslash\)
+    \} \textcolor{keywordflow}{while}(1);
+\end{DoxyCode}

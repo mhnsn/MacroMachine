@@ -1,0 +1,3 @@
+run = "doxygen &>/dev/null; clang-7 -pthread -lm -o main main.c"
+language = "C" # optional
+onBoot = "install-pkg doxygen"
